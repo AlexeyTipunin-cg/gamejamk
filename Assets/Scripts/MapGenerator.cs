@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
@@ -9,11 +10,13 @@ public class MapGenerator : MonoBehaviour
 {
     [SerializeField] public Earth _earthPrefab;
     [SerializeField] public AirGun _airGun;
+    [SerializeField] public Ballon _ballon;
 
     [SerializeField] public PlayerInputController _playerPrefab;
     
     
     private float _earthBlockWidth;
+    private bool _firstGeneration;
     
     private Vector3 _lastSpawnPosition;
 
@@ -22,6 +25,7 @@ public class MapGenerator : MonoBehaviour
     {
         _earthBlockWidth = _earthPrefab.sizeX;
         _pool = new  ObjectPool<Earth>(() => Instantiate(_earthPrefab, transform), ActionOnGet, ActionOnRelease);
+        _firstGeneration = true;
 
         
         GetPrefab(_playerPrefab.transform.position.x);
@@ -40,13 +44,48 @@ public class MapGenerator : MonoBehaviour
         obj.isInPool = false;
     }
 
-    private void GetPrefab(float  position)
+    private void SpawnTurrets()
     {
-        for (int i = 0; i < 8; i++)
+        int count = Random.Range(1, 3);
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(_airGun, _lastSpawnPosition + Vector3.up * _earthPrefab.halfSizeY + Vector3.right * _earthPrefab.sizeX * (0.5f - Random.Range(0f, 1f)), Quaternion.identity);
+        }
+        
+    }
+
+    private void SpawnBallons()
+    {
+        int count = Random.Range(1, 3);
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(_ballon, _lastSpawnPosition + Vector3.up * _earthPrefab.halfSizeY * Random.Range(1.3f, 2.7f) + Vector3.right * _earthPrefab.sizeX * (0.5f - Random.Range(0f, 1f)), Quaternion.identity);
+        }
+        //Instantiate(_ballon, _lastSpawnPosition + Vector3.up * _earthPrefab.halfSizeY * Random.Range(1.3f, 3.2f), Quaternion.identity);
+    }
+
+    private void SpawnPlanes()
+    {
+
+    }
+
+    private void GetPrefab(float position)
+    {
+        for (int i = 0; i < 2; i++)
         {
             var earth = _pool.Get();
-            _lastSpawnPosition = Vector3.right * position  + new Vector3(i * _earthBlockWidth, -18.4f, 0);
-            Instantiate(_airGun, _lastSpawnPosition + Vector3.up * _earthPrefab.halfSizeY, Quaternion.identity);
+            _lastSpawnPosition = Vector3.right * position + new Vector3(i * _earthBlockWidth, -18.4f, 0);
+            if (!_firstGeneration || (i > 0))
+            {
+                SpawnTurrets();
+                SpawnBallons();
+            }
+
+            if (_firstGeneration)
+            {
+                _firstGeneration = false;
+            }
+
             earth.transform.position = _lastSpawnPosition;
         }
 

@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.003, y: 0.941, z: -0.4476236}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6345228150598704207}
@@ -113,7 +113,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.36771888, w: 0.92993706}
   m_LocalPosition: {x: -0.067, y: 1.6509991, z: -0.4476236}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5416727043151198924}
@@ -252,7 +252,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.6973724, y: 1.937748}
+  m_Size: {x: 1.69, y: 1.12}
   m_EdgeRadius: 0
 --- !u!114 &6485471637700261155
 MonoBehaviour:
@@ -276,17 +276,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8443710845420417687}
     m_Modifications:
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: CustomDataModule.mode0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: CustomDataModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: CustomDataModule.vector0_0.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: CustomDataModule.color0.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: CustomDataModule.color0.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: CustomDataModule.vectorComponentCount0
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7601987921702275395, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5186958
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 7601987921702275395, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.024638725
+      value: -0.017
       objectReference: {fileID: 0}
     - target: {fileID: 7601987921702275395, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4476236
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 7601987921702275395, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_LocalRotation.w

@@ -713,6 +713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _earthPrefab: {fileID: 8033205046088416541, guid: 87ca98fb0fe77124f832f85560e7a934, type: 3}
   _airGun: {fileID: 6485471637700261155, guid: ca197adadc5bf544e8dbebb6e0775612, type: 3}
+  _ballon: {fileID: 4850142807386189565, guid: 81e36031bf6c0534581814a43293189c, type: 3}
   _playerPrefab: {fileID: 8172722427212782857}
 --- !u!4 &1892509807
 Transform:
