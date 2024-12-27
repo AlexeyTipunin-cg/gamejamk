@@ -49,4 +49,9 @@ public class AirGun : MonoBehaviour
         
         Debug.Log(angle);
     }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Destroy(gameObject);
+    }
 }

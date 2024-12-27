@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84aa5a8c2f4caff48bacd981f95200ad, type: 3}
-  m_Name: PLayerConfig
+  m_Script: {fileID: 11500000, guid: ea398053f1634b389be53cbd95a8ca92, type: 3}
+  m_Name: WeaponConfig
   m_EditorClassIdentifier: 
-  speed: 0.3
-  noseRotationAngle: {x: 15, y: -15}
-  gravityValue: 0.1
-  healthValue: 100
+  angles: {x: -160, y: -16}
+  cooldownInSeconds: 1
