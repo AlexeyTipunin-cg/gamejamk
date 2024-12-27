@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84aa5a8c2f4caff48bacd981f95200ad, type: 3}
   m_Name: PLayerConfig
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.2
   noseRotationAngle: {x: 15, y: -15}
   gravityValue: 0.1
   healthValue: 100

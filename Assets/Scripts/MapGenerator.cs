@@ -11,6 +11,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] public Earth _earthPrefab;
     [SerializeField] public AirGun _airGun;
     [SerializeField] public Ballon _ballon;
+    [SerializeField] public EnemyPlane _enemyPlane;
 
     [SerializeField] public PlayerInputController _playerPrefab;
     
@@ -66,7 +67,11 @@ public class MapGenerator : MonoBehaviour
 
     private void SpawnPlanes()
     {
-
+        int count = Random.Range(1, 3);
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(_enemyPlane, _lastSpawnPosition + Vector3.up * _earthPrefab.halfSizeY * Random.Range(1.3f, 2.7f) + Vector3.right * _earthPrefab.sizeX * (0.5f - Random.Range(0f, 1f)), Quaternion.identity);
+        }
     }
 
     private void GetPrefab(float position)
@@ -79,6 +84,7 @@ public class MapGenerator : MonoBehaviour
             {
                 SpawnTurrets();
                 SpawnBallons();
+                SpawnPlanes();
             }
 
             if (_firstGeneration)
