@@ -33,12 +33,11 @@ public class AirGun : MonoBehaviour
         {
             gun.rotation = Quaternion.Euler(0, 0, -angle);
             
-            particles.Play();
             if (!shoot)
             {
-                shoot = true;
-                StartCoroutine(Shoot());
+                particles.Play();
 
+                shoot = true;
             }
         }
         else
@@ -49,11 +48,5 @@ public class AirGun : MonoBehaviour
         }
         
         Debug.Log(angle);
-    }
-
-    public IEnumerator Shoot()
-    {
-        particles.Play();
-        yield return new WaitForSeconds(0.1f);
     }
 }
