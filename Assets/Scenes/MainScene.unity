@@ -325,7 +325,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1077,8 +1077,24 @@ PrefabInstance:
       value: Gun
       objectReference: {fileID: 0}
     - target: {fileID: 5439124888034523695, guid: 8f00b1545be3bdc4393974e7cabd9702, type: 3}
+      propertyPath: emitterVelocityMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439124888034523695, guid: 8f00b1545be3bdc4393974e7cabd9702, type: 3}
+      propertyPath: ClampVelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439124888034523695, guid: 8f00b1545be3bdc4393974e7cabd9702, type: 3}
       propertyPath: EmissionModule.m_BurstCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439124888034523695, guid: 8f00b1545be3bdc4393974e7cabd9702, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439124888034523695, guid: 8f00b1545be3bdc4393974e7cabd9702, type: 3}
+      propertyPath: ClampVelocityModule.drag.scalar
+      value: 1187.34
       objectReference: {fileID: 0}
     - target: {fileID: 5439124888034523695, guid: 8f00b1545be3bdc4393974e7cabd9702, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.size

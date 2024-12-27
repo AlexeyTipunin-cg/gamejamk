@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84aa5a8c2f4caff48bacd981f95200ad, type: 3}
-  m_Name: PLayerConfig
+  m_Script: {fileID: 11500000, guid: 4f5bf5f6b9ff4d51bff17e2f122abe21, type: 3}
+  m_Name: EngineConfig_1
   m_EditorClassIdentifier: 
-  speed: 0
-  noseRotationAngle: {x: 15, y: -15}
-  gravityValue: 0.1
-  healthValue: 100
+  engineName: "\u0422\u044F\u0436\u0435\u043B\u044B\u0439 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
+  weight: 100
+  enginePower: 200
