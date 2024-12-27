@@ -15,20 +15,9 @@ public class PlayerHealthComponent : MonoBehaviour
 
     private void Awake()
     {
-        currentHealth = playerConfig.healthValue;
-        // StartCoroutine(Damage());
+        currentHealth = SceneConnection.bodyConfig.health;
     }
-
-    private IEnumerator Damage()
-    {
-        while (isAlive)
-        {
-            yield return new WaitForSeconds(1);
-            ReduceHealth(10); 
-        }
-
-    }
-
+    
     public void ReduceHealth(float amount)
     {
         if (currentHealth - amount <= 0)

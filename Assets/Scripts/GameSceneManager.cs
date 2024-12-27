@@ -13,7 +13,7 @@ public class GameSceneManager : MonoBehaviour
 
     private void OnDeath()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneConnection.LoadPlaneScene();
     }
     
 }

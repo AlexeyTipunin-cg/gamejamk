@@ -31,4 +31,9 @@ public class SceneConnection : MonoBehaviour
         
         SceneManager.LoadScene("MainScene");
     }
+    
+    public static void LoadPlaneScene()
+    {
+        SceneManager.LoadScene("CreatePlane");
+    }
 }
