@@ -14,12 +14,16 @@ public class PlayerInputController : MonoBehaviour
     private bool isDead;
 
     private Vector3 upBorder;
-    
+    [SerializeField] private float weightMod;
+    private Vector2 movementMod;
+
 
     private void Awake()
     {
         upBorder = playerCamera.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
         playerHealthComponent.OnDeath += () => { isDead = true; };
+        weightMod = (SceneConnection.engineConfig.enginePower - SceneConnection.engineConfig.weight + SceneConnection.bodyConfig.weight) / SceneConnection.engineConfig.enginePower + 0.05f;
+        movementMod = new Vector2(1, playerConfig.verticalSpeed * weightMod);
     }
 
     private void FixedUpdate()
@@ -59,7 +63,8 @@ public class PlayerInputController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        stickPosition = context.ReadValue<Vector2>();
+
+        stickPosition = context.ReadValue<Vector2>() * movementMod;
         Debug.Log(stickPosition);
     }
 

@@ -16,3 +16,4 @@ MonoBehaviour:
   noseRotationAngle: {x: 15, y: -15}
   gravityValue: 0.1
   healthValue: 100
+  verticalSpeed: 0.5

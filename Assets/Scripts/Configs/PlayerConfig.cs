@@ -10,4 +10,6 @@ public class PlayerConfig  : ScriptableObject
     public float gravityValue;
     
     public float healthValue;
+
+    public float verticalSpeed;
 }
