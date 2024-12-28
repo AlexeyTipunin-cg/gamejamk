@@ -34,6 +34,8 @@ public class SceneConnection : MonoBehaviour
         _bodyConfig = bodyConfig;
         _weapons = weapons;
         
+        Time.timeScale = 1f;
+        
         SceneManager.LoadScene("MainScene");
     }
     

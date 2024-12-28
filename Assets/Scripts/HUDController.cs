@@ -24,6 +24,7 @@ public class HUDController : MonoBehaviour
 
     private void ShowEndGameWindow()
     {
+        Time.timeScale = 0;
         _endgamePopup.gameObject.SetActive(true);
         _endgamePopup.SetScore(_score);
     }
