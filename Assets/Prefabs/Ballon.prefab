@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4780491118304553147}
   - component: {fileID: 3693126708658293639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AirGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6345228150598704207}
   - component: {fileID: 1000463595560275862}
   - component: {fileID: 4850142807386189565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ballon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

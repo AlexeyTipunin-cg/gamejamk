@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4780491118304553147}
   - component: {fileID: 3693126708658293639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AirGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8443710845420417687}
   - component: {fileID: 2173723790927473409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 6345228150598704207}
   - component: {fileID: 1000463595560275862}
   - component: {fileID: 6485471637700261155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AirGun 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,6 +347,10 @@ PrefabInstance:
     - target: {fileID: 8738709060165487056, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_Name
       value: Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8738709060165487056, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

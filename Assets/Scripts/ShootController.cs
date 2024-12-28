@@ -23,6 +23,8 @@ public class ShootController : MonoBehaviour
         _currentWeapon = weapon;
 
     }
+    
+    private bool isShooting = false;
 
     private void Update()
     {
@@ -39,6 +41,10 @@ public class ShootController : MonoBehaviour
             if (Mouse.current.leftButton.isPressed)
             {
                 _currentWeapon.Attack();
+            }
+            else
+            {
+                _currentWeapon.StopAttack();
             }
 
         }
