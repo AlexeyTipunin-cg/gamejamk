@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5bf5f6b9ff4d51bff17e2f122abe21, type: 3}
   m_Name: EngineConfig_2
   m_EditorClassIdentifier: 
-  engineName: "\u041B\u0435\u0433\u043A\u0438\u0439 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
-  weight: 20
-  enginePower: 200
+  engineName: "\u0421\u0440\u0435\u0434\u043D\u0438\u0439"
+  weight: 70
+  enginePower: 430

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4780491118304553147}
   - component: {fileID: 3693126708658293639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AirGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 2755157893603481817}
   - component: {fileID: 3239754338101128355}
   - component: {fileID: 8035288266850611805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyPlaneFollower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,6 +335,10 @@ PrefabInstance:
     - target: {fileID: 8738709060165487056, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_Name
       value: Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8738709060165487056, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

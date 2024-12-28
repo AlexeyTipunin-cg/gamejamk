@@ -85,5 +85,6 @@ public class EnemyPlaneFollower : MonoBehaviour
         _isSpawned = false;
         transform.position = -Vector3.down * 10000;
         particles.Stop();
+        Debug.Log("Spawned enemy death");
     }
 }

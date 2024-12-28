@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -818, y: 423}
+  m_AnchoredPosition: {x: 92, y: 188}
   m_SizeDelta: {x: 241.85, y: 58.575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1383587854614725429
@@ -1241,6 +1241,7 @@ MonoBehaviour:
   bodyConfigs:
   - {fileID: 11400000, guid: be22a2fbc37567742b2faa14cea15da6, type: 2}
   - {fileID: 11400000, guid: c67fde801b3a77f4890f3abda1a65685, type: 2}
+  - {fileID: 11400000, guid: ad16813f11d41cc468f06d4dac8206a3, type: 2}
   weaponConfigs:
   - {fileID: 11400000, guid: 8531574fbb10e814b913e497d09ba64c, type: 2}
   - {fileID: 11400000, guid: 433fe7c4361218b46ab920e6be396be7, type: 2}
