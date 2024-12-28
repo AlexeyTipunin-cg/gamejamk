@@ -34,14 +34,16 @@ public class EnemyPlaneFollower : MonoBehaviour
         if (rand > math.max(weightMod, 0.25))
         {
             _isSpawned = true;
-            transform.position = player.transform.position + Vector3.left * 100;
+            transform.position = player.transform.position + Vector3.left * 25;
         }
     }
 
-    private void Move()
+    private void Move(float speed)
     {
         //transform.position = transform.position + Vector3.right * 4;
-        rb.MovePosition(Vector3.right);
+
+        rb.MovePosition(rb.position + Vector2.right * speed + Vector2.up * (player.transform.position.y - transform.position.y));
+        //rb.MovePosition(rb.position + Vector2.right * speed + Vector2.up * (player.transform.position.y - transform.position.y));
     }
 
     private void FixedUpdate()
@@ -49,15 +51,17 @@ public class EnemyPlaneFollower : MonoBehaviour
         if(!_isSpawned) return;
 
         Debug.Log("Player position " + player.transform.position.x.ToString() + "; " + transform.position.x.ToString());
-        if (player.transform.position.x - transform.position.x > 20)
+        if (player.transform.position.x - transform.position.x > 15)
         {
             Debug.Log("Player position " + player.transform.position.x);
-            Move();
+            Move(0.4f);
         }
         else
         {
-            if (particles.isPlaying)
+            Move(0.2f);
+            if (!particles.isPlaying)
             {
+                Debug.Log("Spawned enemy shoots");
                 particles.Play();
             }
         }
@@ -65,10 +69,12 @@ public class EnemyPlaneFollower : MonoBehaviour
 
     private void Update()
     {
+        /*
         if(_isSpawned)
         {
             particles.Play();
         }
+        */
         //CalculateRotation(player.transform);
     }
     

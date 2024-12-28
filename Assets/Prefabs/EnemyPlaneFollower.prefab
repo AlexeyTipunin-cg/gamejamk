@@ -157,7 +157,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.15, y: 0.95467377}
+  m_Offset: {x: -0.71, y: 0.95467377}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -167,7 +167,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.77, y: 2.2}
+  m_Size: {x: 2.06, y: 2.2}
   m_EdgeRadius: 0
 --- !u!114 &2755157893603481817
 MonoBehaviour:
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 283795489322582237}
   spawnFrequency: 10
-  rb: {fileID: 0}
+  rb: {fileID: 3239754338101128355}
 --- !u!50 &3239754338101128355
 Rigidbody2D:
   serializedVersion: 4
@@ -233,6 +233,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4780491118304553147}
     m_Modifications:
     - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: CustomDataModule.mode0
       value: 1
       objectReference: {fileID: 0}
@@ -241,8 +245,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: CustomDataModule.vector0_0.scalar
@@ -260,6 +276,10 @@ PrefabInstance:
       propertyPath: CustomDataModule.vectorComponentCount0
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2423927574619419474, guid: f016253ee9edf47498e1850862f5702d, type: 3}
+      propertyPath: CollisionModule.multiplyColliderForceByParticleSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7601987921702275395, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -274,11 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7601987921702275395, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.986
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7601987921702275395, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.012
+      value: -0.092
       objectReference: {fileID: 0}
     - target: {fileID: 7601987921702275395, guid: f016253ee9edf47498e1850862f5702d, type: 3}
       propertyPath: m_LocalPosition.z

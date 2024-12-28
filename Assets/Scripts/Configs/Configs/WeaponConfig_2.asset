@@ -15,7 +15,7 @@ MonoBehaviour:
   name: "\u041F\u0440\u043E\u0441\u0442\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435"
   weight: 10
   damage: 10
-  angles: {x: 0, y: 0}
+  angles: {x: 1, y: -1}
   cooldownInSeconds: 0
-  weaponSprite: {fileID: -618156798686402031, guid: 59a3201e73403a04496e625a521233da, type: 3}
+  weaponSprite: {fileID: 5364532450669860862, guid: 91c2dd5175d707946a1e3b6df05b3770, type: 3}
   weaponPrefab: {fileID: 7354752407585050120, guid: 4e252f33b61de0c47baacb1ab68f2a70, type: 3}
