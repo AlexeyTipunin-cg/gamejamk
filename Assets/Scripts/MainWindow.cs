@@ -63,6 +63,9 @@ public class MainWindow : MonoBehaviour
         
         startButton.onClick.AddListener(StartGame);
 
+        bodyDropdown.options.Clear();
+        engineDropdown.options.Clear();
+        
         foreach (TMP_Dropdown dropdown in weaponsDropdowns)
         {
             dropdown.options.Clear();
@@ -167,6 +170,7 @@ public class MainWindow : MonoBehaviour
         ((RectTransform)weaponsImage[config.index].transform).localRotation = Quaternion.Euler(0, 0, config.angleInConstructWindow);
         ((RectTransform)weaponsImage[config.index].transform).localScale = new Vector3(config.scale, config.scale, 1);
         weaponsImage[config.index].gameObject.SetActive(true);
+        weaponsImage[config.index].sprite = weapon.weaponSprite;
         
         weapons[weaponIndex] = new WeaponData()
         {
