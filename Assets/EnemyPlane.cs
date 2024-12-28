@@ -12,6 +12,8 @@ public class EnemyPlane : MonoBehaviour
     private void Awake()
     {
         player = FindFirstObjectByType<PlayerHealthComponent>();
+        _enemyHealthComponent = gameObject.GetComponent<EnemyHealthComponent>();
+
         particles.Play();
     }
 
@@ -21,6 +23,7 @@ public class EnemyPlane : MonoBehaviour
     }
     
     private bool shoot = false;
+    private EnemyHealthComponent _enemyHealthComponent;
 
     private void CalculateRotation(Transform TargetObjTransform)
     {
@@ -50,10 +53,9 @@ public class EnemyPlane : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        var t = other.GetComponent<ParticleSystem>();
-        if (!t.customData.enabled)
+        if (other.TryGetComponent(out DamageComponent component))
         {
-            Destroy(gameObject);
+            _enemyHealthComponent.ReduceHealth(component.GetDamage());
         }
     }
 }

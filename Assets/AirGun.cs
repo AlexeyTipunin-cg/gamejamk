@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class AirGun : MonoBehaviour
@@ -10,9 +6,12 @@ public class AirGun : MonoBehaviour
     [SerializeField] private Transform gun;
     [SerializeField] private ParticleSystem particles;
 
+    private EnemyHealthComponent _enemyHealthComponent;
+
     private void Awake()
     {
         player = FindFirstObjectByType<PlayerHealthComponent>();
+        _enemyHealthComponent = gameObject.GetComponent<EnemyHealthComponent>();
     }
 
     private void Update()
@@ -52,6 +51,9 @@ public class AirGun : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Destroy(gameObject);
+        if (other.TryGetComponent(out DamageComponent component))
+        {
+            _enemyHealthComponent.ReduceHealth(component.GetDamage());
+        }
     }
 }

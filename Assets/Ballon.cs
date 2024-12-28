@@ -11,6 +11,8 @@ public class Ballon : MonoBehaviour
     private void Awake()
     {
         player = FindFirstObjectByType<PlayerHealthComponent>();
+        _enemyHealthComponent = gameObject.GetComponent<EnemyHealthComponent>();
+
     }
 
     private void Update()
@@ -19,13 +21,13 @@ public class Ballon : MonoBehaviour
     }
     
     private bool shoot = false;
+    private EnemyHealthComponent _enemyHealthComponent;
 
     private void OnParticleCollision(GameObject other)
     {
-        var t = other.GetComponent<ParticleSystem>();
-        if (!t.customData.enabled)
+        if (other.TryGetComponent(out DamageComponent component))
         {
-            Destroy(gameObject);
+            _enemyHealthComponent.ReduceHealth(component.GetDamage());
         }
     }
 }

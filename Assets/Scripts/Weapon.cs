@@ -7,6 +7,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private ParticleSystem attack;
     private WeaponSlotConfig config;
 
+   public WeaponConfig weaponConfig => _weaponConfig;
+
 
     private float currentCooldownTime;
     bool isCooldown;
