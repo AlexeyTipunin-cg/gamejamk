@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea398053f1634b389be53cbd95a8ca92, type: 3}
-  m_Name: WeaponConfig_2
+  m_Name: WeaponConfig_4
   m_EditorClassIdentifier: 
-  name: "\u041F\u0443\u043B\u0435\u043C\u0451\u0442"
-  weight: 40
-  damage: 15
-  angles: {x: 15, y: -15}
-  cooldownInSeconds: 0.5
-  weaponSprite: {fileID: 6422180444643119845, guid: 3c556412aa5d3b04e84cffea7bacf912, type: 3}
-  weaponPrefab: {fileID: 7354752407585050120, guid: 8f00b1545be3bdc4393974e7cabd9702, type: 3}
+  name: "\u0413\u0440\u0430\u043D\u0430\u0442\u043E\u043C\u0451\u0442"
+  weight: 80
+  damage: 40
+  angles: {x: 0, y: 0}
+  cooldownInSeconds: 5
+  weaponSprite: {fileID: 0}
+  weaponPrefab: {fileID: 7354752407585050120, guid: 858fe2760623fb64b9c2d6840d7adf48, type: 3}

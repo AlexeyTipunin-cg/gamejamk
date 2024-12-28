@@ -1230,10 +1230,10 @@ MonoBehaviour:
   bodyDropdown: {fileID: 1832606858750840969}
   weapon1Dropdown: {fileID: 6627359918838359778}
   weapon2Dropdown: {fileID: 7156042723532926830}
-  weapon3Dropdown: {fileID: 0}
-  weapon4Dropdown: {fileID: 0}
-  weapon5Dropdown: {fileID: 0}
-  weapon6Dropdown: {fileID: 0}
+  weapon3Dropdown: {fileID: 8809982715989688818}
+  weapon4Dropdown: {fileID: 4186534372754269995}
+  weapon5Dropdown: {fileID: 6059171385335365057}
+  weapon6Dropdown: {fileID: 7769611559137460099}
   engineConfigs:
   - {fileID: 11400000, guid: 9f3aab758e42b734aa11f195a8b9d7b2, type: 2}
   - {fileID: 11400000, guid: 9599f20b58933464aa2aaa97fa31a6ba, type: 2}
@@ -1241,9 +1241,13 @@ MonoBehaviour:
   bodyConfigs:
   - {fileID: 11400000, guid: be22a2fbc37567742b2faa14cea15da6, type: 2}
   - {fileID: 11400000, guid: c67fde801b3a77f4890f3abda1a65685, type: 2}
+  - {fileID: 11400000, guid: ad16813f11d41cc468f06d4dac8206a3, type: 2}
   weaponConfigs:
   - {fileID: 11400000, guid: 8531574fbb10e814b913e497d09ba64c, type: 2}
   - {fileID: 11400000, guid: 433fe7c4361218b46ab920e6be396be7, type: 2}
+  - {fileID: 11400000, guid: c6f1e96f26463b9408334b15ae47d145, type: 2}
+  - {fileID: 11400000, guid: 0faea2b35383f054a8ac205894e6aca6, type: 2}
+  - {fileID: 11400000, guid: 19bf46fd8b2b49544be80cd418d58858, type: 2}
   weightText: {fileID: 3739217718059365040}
   startButton: {fileID: 3852233654112323401}
   cantStartText: {fileID: 7216042099889495704}
@@ -1256,8 +1260,8 @@ MonoBehaviour:
   - {fileID: 8978083929537133488}
   _weaponSlotConfigs:
   - {fileID: 11400000, guid: 4951110b525a82b4c85f3a7f4763cb1e, type: 2}
+  - {fileID: 11400000, guid: a1f413a87d75f79438f553f52476ab47, type: 2}
   - {fileID: 11400000, guid: 0dd246400402b8547ad0d46a169eb2a6, type: 2}
-  - {fileID: 11400000, guid: 30b9570e62ce92d4bb1fae29544e56a2, type: 2}
   - {fileID: 11400000, guid: fa15ca640699bb0488a12aabddab5977, type: 2}
   - {fileID: 11400000, guid: 60eb2c8e9c30170449dafa26ba48a46e, type: 2}
   - {fileID: 11400000, guid: f31fd8181e86a3c4cb89cc731f4f7daa, type: 2}

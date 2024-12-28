@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea398053f1634b389be53cbd95a8ca92, type: 3}
   m_Name: WeaponConfig_1
   m_EditorClassIdentifier: 
-  name: "\u041F\u0440\u043E\u0441\u0442\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435"
-  weight: 10
+  name: "\u041A\u0443\u0440\u0441\u043E\u0432\u043E\u0439 \u043F\u0443\u043B\u0435\u043C\u0451\u0442"
+  weight: 40
   damage: 10
-  angles: {x: -45, y: 45}
-  cooldownInSeconds: 0
-  weaponSprite: {fileID: 6422180444643119845, guid: 3c556412aa5d3b04e84cffea7bacf912, type: 3}
-  weaponPrefab: {fileID: 7354752407585050120, guid: 8f00b1545be3bdc4393974e7cabd9702, type: 3}
+  angles: {x: 0, y: 0}
+  cooldownInSeconds: 0.5
+  weaponSprite: {fileID: 5364532450669860862, guid: 91c2dd5175d707946a1e3b6df05b3770, type: 3}
+  weaponPrefab: {fileID: 7354752407585050120, guid: 4e252f33b61de0c47baacb1ab68f2a70, type: 3}

@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 1
-  slotConfig: {fileID: 11400000, guid: 0dd246400402b8547ad0d46a169eb2a6, type: 2}
+  slotConfig: {fileID: 11400000, guid: a1f413a87d75f79438f553f52476ab47, type: 2}
 --- !u!1 &7362896161573970426
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,4 +654,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 2
-  slotConfig: {fileID: 11400000, guid: 30b9570e62ce92d4bb1fae29544e56a2, type: 2}
+  slotConfig: {fileID: 11400000, guid: 0dd246400402b8547ad0d46a169eb2a6, type: 2}
