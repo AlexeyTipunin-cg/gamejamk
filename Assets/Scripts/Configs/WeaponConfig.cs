@@ -10,4 +10,6 @@ public class WeaponConfig : ScriptableObject
     public Vector2 angles;
     public float cooldownInSeconds;
     public Sprite weaponSprite;
+
+    public Weapon weaponPrefab;
 }

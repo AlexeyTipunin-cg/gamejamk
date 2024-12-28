@@ -17,5 +17,5 @@ MonoBehaviour:
   angleInConstructWindow: -90
   scale: 6
   positionInGame: {x: 0, y: 0}
-  angleInGame: 0
+  angleInGame: -90
   angles: {x: -135, y: -45}

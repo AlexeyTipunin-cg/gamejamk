@@ -53,6 +53,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""FirstWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c9b997a-963c-47e1-b38d-c33c7ee87329"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8b22a6e-e7f5-4c20-afea-9e91fd9fdd1b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -154,6 +172,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""RotateGun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""534feda6-203b-408e-911e-69ab59b48c7d"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FirstWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e4a0a51-0f65-4ec9-ad49-f21c923ccf0b"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +227,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Join = m_Player.FindAction("Join", throwIfNotFound: true);
         m_Player_RotateGun = m_Player.FindAction("RotateGun", throwIfNotFound: true);
+        m_Player_FirstWeapon = m_Player.FindAction("FirstWeapon", throwIfNotFound: true);
+        m_Player_SecondWeapon = m_Player.FindAction("SecondWeapon", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +293,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Join;
     private readonly InputAction m_Player_RotateGun;
+    private readonly InputAction m_Player_FirstWeapon;
+    private readonly InputAction m_Player_SecondWeapon;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -258,6 +302,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Join => m_Wrapper.m_Player_Join;
         public InputAction @RotateGun => m_Wrapper.m_Player_RotateGun;
+        public InputAction @FirstWeapon => m_Wrapper.m_Player_FirstWeapon;
+        public InputAction @SecondWeapon => m_Wrapper.m_Player_SecondWeapon;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -276,6 +322,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @RotateGun.started += instance.OnRotateGun;
             @RotateGun.performed += instance.OnRotateGun;
             @RotateGun.canceled += instance.OnRotateGun;
+            @FirstWeapon.started += instance.OnFirstWeapon;
+            @FirstWeapon.performed += instance.OnFirstWeapon;
+            @FirstWeapon.canceled += instance.OnFirstWeapon;
+            @SecondWeapon.started += instance.OnSecondWeapon;
+            @SecondWeapon.performed += instance.OnSecondWeapon;
+            @SecondWeapon.canceled += instance.OnSecondWeapon;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -289,6 +341,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @RotateGun.started -= instance.OnRotateGun;
             @RotateGun.performed -= instance.OnRotateGun;
             @RotateGun.canceled -= instance.OnRotateGun;
+            @FirstWeapon.started -= instance.OnFirstWeapon;
+            @FirstWeapon.performed -= instance.OnFirstWeapon;
+            @FirstWeapon.canceled -= instance.OnFirstWeapon;
+            @SecondWeapon.started -= instance.OnSecondWeapon;
+            @SecondWeapon.performed -= instance.OnSecondWeapon;
+            @SecondWeapon.canceled -= instance.OnSecondWeapon;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -320,5 +378,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJoin(InputAction.CallbackContext context);
         void OnRotateGun(InputAction.CallbackContext context);
+        void OnFirstWeapon(InputAction.CallbackContext context);
+        void OnSecondWeapon(InputAction.CallbackContext context);
     }
 }

@@ -18,4 +18,4 @@ MonoBehaviour:
   scale: 6
   positionInGame: {x: 0, y: 0}
   angleInGame: 0
-  angles: {x: -135, y: -45}
+  angles: {x: -40, y: 40}

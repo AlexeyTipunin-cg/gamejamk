@@ -31,6 +31,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "FirstWeapon",
+                    "type": "Button",
+                    "id": "0c9b997a-963c-47e1-b38d-c33c7ee87329",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SecondWeapon",
+                    "type": "Button",
+                    "id": "f8b22a6e-e7f5-4c20-afea-9e91fd9fdd1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -130,6 +148,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "RotateGun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "534feda6-203b-408e-911e-69ab59b48c7d",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e4a0a51-0f65-4ec9-ad49-f21c923ccf0b",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +13,7 @@ public class SceneConnection : MonoBehaviour
     private static SceneConnection instance;
     
     public static WeaponConfig[]  weapons => _weapons;
+    public static EngineConfig engineConfigs => _engineConfig;
     
     private void Awake()
     {

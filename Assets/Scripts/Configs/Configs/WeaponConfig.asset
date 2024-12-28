@@ -18,3 +18,4 @@ MonoBehaviour:
   angles: {x: -135, y: -45}
   cooldownInSeconds: 0
   weaponSprite: {fileID: 6422180444643119845, guid: 3c556412aa5d3b04e84cffea7bacf912, type: 3}
+  weaponPrefab: {fileID: 7354752407585050120, guid: 8f00b1545be3bdc4393974e7cabd9702, type: 3}

@@ -3,18 +3,19 @@ using UnityEngine.InputSystem;
 
 public class ShootController : MonoBehaviour
 {
-
-    [SerializeField] private Weapon[] weapon;
     [SerializeField] private Camera camera;
+    [SerializeField] private PlayerShip playerShip;
 
     
     private Weapon _currentWeapon;
     private Vector2 mousePosition;
 
-
-    private void Awake()
+    private void Start()
     {
-        ChooseWeapon(weapon[0]);
+        if (playerShip.HasWeapon())
+        {
+            ChooseWeapon(playerShip.GetWeapon(0));
+        }
     }
 
     private void ChooseWeapon(Weapon weapon)
@@ -32,10 +33,6 @@ public class ShootController : MonoBehaviour
             var worldMousePosition = camera.ScreenToWorldPoint(mousePosition);
             worldMousePosition.z = 0;
             _currentWeapon.Rotate(worldMousePosition);
-            // Rotate(worldMousePosition);
-
-            // var angle = Vector2.Angle(worldMousePosition - _currentWeapon.transform.position, Vector2.left);
-            // .Rotate(angle);
             
             Debug.Log("Mouse pos" + mousePosition);
 
@@ -47,24 +44,30 @@ public class ShootController : MonoBehaviour
         }
     }
 
-    private void Rotate(Vector3 mousePosition)
-    {
-        Vector3 diff = mousePosition - _currentWeapon.transform.position;
-        float f = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        _currentWeapon.transform.rotation = Quaternion.Euler(0, 0, f);
-    }
-
     public void OnMove(InputAction.CallbackContext context)
     {
         mousePosition = context.ReadValue<Vector2>();
         Debug.Log("Mouse pos" + mousePosition);
-        // if (_currentWeapon != null)
-        // {
-        //    var worldMousePosition = camera.ScreenToWorldPoint(mousePosition);
-        //    worldMousePosition.z = 0;
-        //
-        //    var angle = Vector2.Angle(worldMousePosition - _currentWeapon.transform.position, _currentWeapon.transform.forward);
-        //    _currentWeapon.Rotate(angle);
-        // }
+    }
+    
+    public void FirstWeapon(InputAction.CallbackContext context)
+    {
+        var weapon = playerShip.GetWeapon(0);
+        if (weapon != null && weapon != _currentWeapon)
+        {
+            ChooseWeapon(weapon);
+        }
+        Debug.Log("Mouse pos" + mousePosition);
+    }
+    
+    public void SecondWeapon(InputAction.CallbackContext context)
+    {
+        var weapon = playerShip.GetWeapon(1);
+        if (weapon != null&& weapon != _currentWeapon)
+        {
+            ChooseWeapon(weapon);
+        }
+        
+        Debug.Log("Mouse pos" + mousePosition);
     }
 }

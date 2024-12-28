@@ -1,18 +1,26 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private WeaponConfig config;
+    [SerializeField] private WeaponConfig _weaponConfig;
     [SerializeField] private ParticleSystem attack;
+    private WeaponSlotConfig config;
+
 
     private float currentCooldownTime;
     bool isCooldown;
+
+    public void SetConfig(WeaponSlotConfig injectedConfig)
+    {
+        config = injectedConfig;
+    }
     public void Rotate(Vector3 mouseDelta)
     {
         Vector3 diff = mouseDelta - transform.position;
         float f = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        
+        Debug.Log("WEAPON_ANGLE:-----> " + f);
         
         if (config.angles.x <= f && f <= config.angles.y)
         {
@@ -36,7 +44,7 @@ public class Weapon : MonoBehaviour
 
     private IEnumerator UpdateTime()
     {
-        yield return new WaitForSeconds(config.cooldownInSeconds);
+        yield return new WaitForSeconds(_weaponConfig.cooldownInSeconds);
         isCooldown = false;
     }
 }
