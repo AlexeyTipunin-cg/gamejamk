@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 283795489322582237}
-  spawnFrequency: 10
+  spawnFrequency: 5
   rb: {fileID: 3239754338101128355}
 --- !u!50 &3239754338101128355
 Rigidbody2D:
