@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerShip : MonoBehaviour
 {
     [SerializeField] private ShipSlot[] slots;
-    private WeaponConfig[] selectedWeapons;
+    private WeaponData[] selectedWeapons;
 
-    [HideInInspector]public List<Weapon> weapons = new List<Weapon>();
+    [HideInInspector] public List<(int index, Weapon weapon)> weapons = new List<(int index, Weapon)>();
 
     private void Awake()
     {
@@ -18,11 +19,11 @@ public class PlayerShip : MonoBehaviour
             var w = selectedWeapons[i];
             if (w != null)
             {
-                var slot = slots[i];
-                var weapon = Instantiate(w.weaponPrefab, slot.transform);
+                var slot = slots.First(s => s.index == w.slotIndex);
+                var weapon = Instantiate(w.prefab, slot.transform);
                 weapon.SetConfig(slot.slotConfig);
                 weapon.transform.rotation = Quaternion.Euler(0, 0, slot.slotConfig.angleInGame);
-                weapons.Add(weapon);
+                weapons.Add((slot.index, weapon));
             }
         }
     }
@@ -30,6 +31,12 @@ public class PlayerShip : MonoBehaviour
     public Transform GetWeaponSlot(int index)
     {
         return slots[index].transform;
+    }
+
+    public (int index, Weapon weapon) GetFirst()
+    {
+        var index = weapons.Min(s => s.index);
+        return weapons.First(s => s.index == index);
     }
     
     public Weapon GetWeapon(int index)
@@ -39,7 +46,7 @@ public class PlayerShip : MonoBehaviour
             return null;
         }
         
-        return weapons[index];
+        return weapons.FirstOrDefault( s => s.index == index).weapon;
     }
 
     public bool HasWeapon()

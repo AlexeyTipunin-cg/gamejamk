@@ -8,15 +8,11 @@ public class HUDController : MonoBehaviour
 
     private void Awake()
     {
-        player = FindAnyObjectByType<PlayerInputController>();
-
-        _maxHealth = player.playerConfig.healthValue;
+        _maxHealth = SceneConnection.bodyConfig.health;
         SetProgressBar(_maxHealth);
 
         _playerHealth.OnHealthChanged += SetProgressBar;
     }
-
-    public PlayerInputController player { get; set; }
 
     private void SetProgressBar(float health)
     {

@@ -29,17 +29,28 @@ public class Weapon : MonoBehaviour
         }
     }
     
+    private bool isEmmiting = false;
+    
     
 
     public void Attack()
     {
-        if (!isCooldown)
+        if (!isCooldown && !isEmmiting)
         {
             attack.Play();
             isCooldown = true;
+            isEmmiting = true;
 
             StartCoroutine(UpdateTime());
         }
+        
+        Debug.LogWarning("isCooldown " + isCooldown + "  " + "is Stopped " +attack.isStopped );
+    }
+
+    public void StopAttack()
+    {
+        attack.Stop();
+        isEmmiting = false;
     }
 
     private IEnumerator UpdateTime()

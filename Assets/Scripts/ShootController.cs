@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,11 +11,16 @@ public class ShootController : MonoBehaviour
     private Weapon _currentWeapon;
     private Vector2 mousePosition;
 
+    public event Action<int> OnWeaponSelected;
+
     private void Start()
     {
         if (playerShip.HasWeapon())
         {
-            ChooseWeapon(playerShip.GetWeapon(0));
+
+            var firstWeapon = playerShip.GetFirst();
+            ChooseWeapon(firstWeapon.weapon);
+            OnWeaponSelected?.Invoke(firstWeapon.index);
         }
     }
 
@@ -23,6 +29,8 @@ public class ShootController : MonoBehaviour
         _currentWeapon = weapon;
 
     }
+    
+    private bool isShooting = false;
 
     private void Update()
     {
@@ -40,14 +48,73 @@ public class ShootController : MonoBehaviour
             {
                 _currentWeapon.Attack();
             }
+            else
+            {
+                _currentWeapon.StopAttack();
+            }
 
         }
+
+        IsButtonPressed();
+    }
+
+    public void IsButtonPressed()
+    {
+        int index = -1;
+        if (Keyboard.current.digit1Key.isPressed)
+        {
+            index = 0;
+        }
+        
+        if (Keyboard.current.digit2Key.isPressed)
+        {
+            index = 1;
+        }
+        
+        if (Keyboard.current.digit3Key.isPressed)
+        {
+            index = 2;
+        }
+        
+        if (Keyboard.current.digit4Key.isPressed)
+        {
+            index = 3;
+        }
+        
+        if (Keyboard.current.digit5Key.isPressed)
+        {
+            index = 4;
+        }
+        
+        if (Keyboard.current.digit6Key.isPressed)
+        {
+            index = 5;
+        }
+
+        if (index > -1)
+        {
+            var weapon = playerShip.GetWeapon(index);
+            if (weapon != null && weapon != _currentWeapon)
+            {
+                ChooseWeapon(weapon);
+                OnWeaponSelected?.Invoke(index);
+            }
+            OnWeaponSelected?.Invoke(index);
+        }
+        
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         mousePosition = context.ReadValue<Vector2>();
         Debug.Log("Mouse pos" + mousePosition);
+    }
+
+    public void OnNumbersPressed(InputAction.CallbackContext context)
+    {
+        var obj = context.ReadValueAsObject();
+        Debug.LogWarning("Numbers Pressed" + obj);
     }
     
     public void FirstWeapon(InputAction.CallbackContext context)
