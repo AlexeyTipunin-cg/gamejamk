@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyPlaneFollower : MonoBehaviour
 {
     private EnemyHealthComponent enemyHealthComponent { get; set; }
+    private PlayerHealthComponent playerHealthComponent { get; set; }
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private float spawnFrequency;
     [SerializeField] private Rigidbody2D rb;
@@ -12,7 +13,8 @@ public class EnemyPlaneFollower : MonoBehaviour
 
     private void Awake()
     {
-        enemyHealthComponent = FindFirstObjectByType<EnemyHealthComponent>();
+        playerHealthComponent = FindFirstObjectByType<PlayerHealthComponent>();
+        //enemyHealthComponent = FindFirstObjectByType<EnemyHealthComponent>();
         InvokeRepeating("TryToSpawn", spawnFrequency, spawnFrequency);
         _isSpawned = false;
         
@@ -32,8 +34,9 @@ public class EnemyPlaneFollower : MonoBehaviour
 
         if (rand > math.max(weightMod, 0.25))
         {
+            Debug.Log("Follwer spawned");
             _isSpawned = true;
-            transform.position = enemyHealthComponent.transform.position + Vector3.left * 25;
+            transform.position = playerHealthComponent.transform.position + Vector3.left * 25;
             _enemyHealthComponent.RefillHealth();
         }
     }
@@ -42,7 +45,7 @@ public class EnemyPlaneFollower : MonoBehaviour
     {
         //transform.position = transform.position + Vector3.right * 4;
 
-        rb.MovePosition(rb.position + Vector2.right * speed + Vector2.up * (enemyHealthComponent.transform.position.y - transform.position.y));
+        rb.MovePosition(rb.position + Vector2.right * speed + Vector2.up * (playerHealthComponent.transform.position.y - transform.position.y));
         //rb.MovePosition(rb.position + Vector2.right * speed + Vector2.up * (player.transform.position.y - transform.position.y));
     }
 
@@ -50,10 +53,10 @@ public class EnemyPlaneFollower : MonoBehaviour
     {
         if(!_isSpawned) return;
 
-        Debug.Log("Player position " + enemyHealthComponent.transform.position.x.ToString() + "; " + transform.position.x.ToString());
-        if (enemyHealthComponent.transform.position.x - transform.position.x > 15)
+        Debug.Log("Player position " + playerHealthComponent.transform.position.x.ToString() + "; " + transform.position.x.ToString());
+        if (playerHealthComponent.transform.position.x - transform.position.x > 15)
         {
-            Debug.Log("Player position " + enemyHealthComponent.transform.position.x);
+            Debug.Log("Player position " + playerHealthComponent.transform.position.x);
             Move(0.4f);
         }
         else
@@ -85,5 +88,6 @@ public class EnemyPlaneFollower : MonoBehaviour
         _isSpawned = false;
         transform.position = -Vector3.down * 10000;
         particles.Stop();
+        Debug.Log("Spawned enemy death");
     }
 }

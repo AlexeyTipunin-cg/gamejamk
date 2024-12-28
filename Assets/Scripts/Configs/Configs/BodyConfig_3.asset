@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a685162b35d4391b11f2c31842a73aa, type: 3}
   m_Name: BodyConfig_3
   m_EditorClassIdentifier: 
-  bodyName: "\u041D\u043E\u0432\u044B\u0439 \u043A\u043E\u0440\u043F\u0443\u0441"
-  weight: 10
-  health: 200
+  bodyName: "\u041B\u0443\u0447\u0448\u0438\u0439"
+  weight: 140
+  health: 1000

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1b76fd9c8b41c09c8d8f8677e1c419, type: 3}
   m_Name: EnemyConfigAirgun
   m_EditorClassIdentifier: 
-  healthValue: 100
+  healthValue: 50
