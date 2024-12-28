@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964d10e197cb45d099775222f339a628, type: 3}
   m_Name: WeaponSlotConfig_2
   m_EditorClassIdentifier: 
-  index: 1
-  positionInConstructWindow: {x: 496, y: -15}
+  index: 2
+  positionInConstructWindow: {x: 503.9999, y: -117.9999}
   angleInConstructWindow: 0
   scale: 6
   positionInGame: {x: 0, y: 0}
