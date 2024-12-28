@@ -1230,10 +1230,10 @@ MonoBehaviour:
   bodyDropdown: {fileID: 1832606858750840969}
   weapon1Dropdown: {fileID: 6627359918838359778}
   weapon2Dropdown: {fileID: 7156042723532926830}
-  weapon3Dropdown: {fileID: 0}
-  weapon4Dropdown: {fileID: 0}
-  weapon5Dropdown: {fileID: 0}
-  weapon6Dropdown: {fileID: 0}
+  weapon3Dropdown: {fileID: 8809982715989688818}
+  weapon4Dropdown: {fileID: 4186534372754269995}
+  weapon5Dropdown: {fileID: 6059171385335365057}
+  weapon6Dropdown: {fileID: 7769611559137460099}
   engineConfigs:
   - {fileID: 11400000, guid: 9f3aab758e42b734aa11f195a8b9d7b2, type: 2}
   - {fileID: 11400000, guid: 9599f20b58933464aa2aaa97fa31a6ba, type: 2}
@@ -1244,6 +1244,9 @@ MonoBehaviour:
   weaponConfigs:
   - {fileID: 11400000, guid: 8531574fbb10e814b913e497d09ba64c, type: 2}
   - {fileID: 11400000, guid: 433fe7c4361218b46ab920e6be396be7, type: 2}
+  - {fileID: 11400000, guid: c6f1e96f26463b9408334b15ae47d145, type: 2}
+  - {fileID: 11400000, guid: 0faea2b35383f054a8ac205894e6aca6, type: 2}
+  - {fileID: 11400000, guid: 19bf46fd8b2b49544be80cd418d58858, type: 2}
   weightText: {fileID: 3739217718059365040}
   startButton: {fileID: 3852233654112323401}
   cantStartText: {fileID: 7216042099889495704}

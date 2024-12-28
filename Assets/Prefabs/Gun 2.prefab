@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4449454627061278356}
   - component: {fileID: 3361416456476890909}
   - component: {fileID: 7354752407585050120}
-  m_Layer: 0
-  m_Name: Gun
+  - component: {fileID: 6453756801777631822}
+  m_Layer: 8
+  m_Name: Gun 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,14 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5299507192328972227}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.37945604, w: 0.92520976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 331100558115810977}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -44.6}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3361416456476890909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 6422180444643119845, guid: 3c556412aa5d3b04e84cffea7bacf912, type: 3}
+  m_Sprite: {fileID: 1820977456509801507, guid: 5f495916282183f4daae66c8238f4ca3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.42, y: 0.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,8 +101,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcf1293ce384a76bf26572535db2829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponConfig: {fileID: 11400000, guid: 8531574fbb10e814b913e497d09ba64c, type: 2}
+  _weaponConfig: {fileID: 11400000, guid: 0faea2b35383f054a8ac205894e6aca6, type: 2}
   attack: {fileID: 5439124888034523695}
+--- !u!114 &6453756801777631822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299507192328972227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147167b173264851b5b45da8c70dad09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7351082761476076784
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +126,7 @@ GameObject:
   - component: {fileID: 331100558115810977}
   - component: {fileID: 5439124888034523695}
   - component: {fileID: 6838626959637449639}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 7351082761476076784}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.541, y: -0.028, z: -0}
+  m_LocalPosition: {x: 0.669, y: 0, z: -0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -271,7 +284,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 35
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -325,7 +338,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9349999, g: 0.08018869, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.66788715, b: 0.07843137, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -389,7 +402,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -713,7 +726,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 2.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3952,7 +3965,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 192
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
