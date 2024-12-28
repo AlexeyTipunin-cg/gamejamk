@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 6345228150598704207}
   - component: {fileID: 1000463595560275862}
   - component: {fileID: 6485471637700261155}
+  - component: {fileID: 525533990504493753}
   m_Layer: 7
   m_Name: AirGun
   m_TagString: Untagged
@@ -268,6 +269,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 8443710845420417687}
   particles: {fileID: 283795489322582237}
+--- !u!114 &525533990504493753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6261862815067945261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb8e854ece24991b162a4fcdb6d207a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyConfig: {fileID: 11400000, guid: 63fa23a06e91f6f459ec82550c2cc609, type: 2}
 --- !u!1001 &2473526466052666255
 PrefabInstance:
   m_ObjectHideFlags: 0

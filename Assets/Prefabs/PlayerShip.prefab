@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 206276889124061692}
   - component: {fileID: 2499241739014130050}
   - component: {fileID: 3733014695407286155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5844286835970639225}
   - component: {fileID: 1293221058732757809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 263196287235325038}
   - component: {fileID: 5214618812814034180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 4045443990411250495}
   - component: {fileID: 8531519636656289777}
   - component: {fileID: 1630463716866243275}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354806798520899977}
   - component: {fileID: 6904610515123847655}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6085638672067311284}
   - component: {fileID: 2004561867300662036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6316713111341219569}
   - component: {fileID: 3872867160874988400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4304891031974476425}
   - component: {fileID: 7879499862109786970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slot_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

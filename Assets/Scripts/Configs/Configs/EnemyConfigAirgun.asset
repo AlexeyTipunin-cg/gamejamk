@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964d10e197cb45d099775222f339a628, type: 3}
-  m_Name: WeaponSlotConfig_5
+  m_Script: {fileID: 11500000, guid: cd1b76fd9c8b41c09c8d8f8677e1c419, type: 3}
+  m_Name: EnemyConfigAirgun
   m_EditorClassIdentifier: 
-  index: 5
-  positionInConstructWindow: {x: -509, y: 70}
-  angleInConstructWindow: -180
-  scale: 6
-  positionInGame: {x: 0, y: 0}
-  angleInGame: -180
-  angles: {x: 21.6, y: -268.4}
+  healthValue: 20
