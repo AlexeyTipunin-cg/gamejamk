@@ -15,15 +15,23 @@ public class EnemyHealthComponent : MonoBehaviour
 
     private void Awake()
     {
+        RefillHealth();
+    }
+
+    public void RefillHealth()
+    {
         currentHealth = enemyConfig.healthValue;
     }
     
-    public void ReduceHealth(float amount)
+    public void ReduceHealth(float amount, bool needDestroy = true)
     {
         if (currentHealth - amount <= 0)
         {
             OnDeath?.Invoke();
-            Destroy(this.gameObject);
+            if (needDestroy)
+            {
+                Destroy(this.gameObject);
+            }
         }
         
         currentHealth = Mathf.Max(currentHealth - amount, 0);

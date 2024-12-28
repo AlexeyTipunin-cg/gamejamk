@@ -1,14 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public class EnemyPlaneFollower : MonoBehaviour
 {
-    private PlayerHealthComponent player { get; set; }
+    private EnemyHealthComponent enemyHealthComponent { get; set; }
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private float spawnFrequency;
     [SerializeField] private Rigidbody2D rb;
@@ -17,9 +12,13 @@ public class EnemyPlaneFollower : MonoBehaviour
 
     private void Awake()
     {
-        player = FindFirstObjectByType<PlayerHealthComponent>();
+        enemyHealthComponent = FindFirstObjectByType<EnemyHealthComponent>();
         InvokeRepeating("TryToSpawn", spawnFrequency, spawnFrequency);
         _isSpawned = false;
+        
+        _enemyHealthComponent = gameObject.GetComponent<EnemyHealthComponent>();
+        _enemyHealthComponent.OnDeath += OnDeath;
+
     }
 
     private void TryToSpawn()
@@ -34,7 +33,8 @@ public class EnemyPlaneFollower : MonoBehaviour
         if (rand > math.max(weightMod, 0.25))
         {
             _isSpawned = true;
-            transform.position = player.transform.position + Vector3.left * 25;
+            transform.position = enemyHealthComponent.transform.position + Vector3.left * 25;
+            _enemyHealthComponent.RefillHealth();
         }
     }
 
@@ -42,7 +42,7 @@ public class EnemyPlaneFollower : MonoBehaviour
     {
         //transform.position = transform.position + Vector3.right * 4;
 
-        rb.MovePosition(rb.position + Vector2.right * speed + Vector2.up * (player.transform.position.y - transform.position.y));
+        rb.MovePosition(rb.position + Vector2.right * speed + Vector2.up * (enemyHealthComponent.transform.position.y - transform.position.y));
         //rb.MovePosition(rb.position + Vector2.right * speed + Vector2.up * (player.transform.position.y - transform.position.y));
     }
 
@@ -50,10 +50,10 @@ public class EnemyPlaneFollower : MonoBehaviour
     {
         if(!_isSpawned) return;
 
-        Debug.Log("Player position " + player.transform.position.x.ToString() + "; " + transform.position.x.ToString());
-        if (player.transform.position.x - transform.position.x > 15)
+        Debug.Log("Player position " + enemyHealthComponent.transform.position.x.ToString() + "; " + transform.position.x.ToString());
+        if (enemyHealthComponent.transform.position.x - transform.position.x > 15)
         {
-            Debug.Log("Player position " + player.transform.position.x);
+            Debug.Log("Player position " + enemyHealthComponent.transform.position.x);
             Move(0.4f);
         }
         else
@@ -66,54 +66,24 @@ public class EnemyPlaneFollower : MonoBehaviour
             }
         }
     }
-
-    private void Update()
-    {
-        /*
-        if(_isSpawned)
-        {
-            particles.Play();
-        }
-        */
-        //CalculateRotation(player.transform);
-    }
+    
     
     private bool shoot = false;
+    private EnemyHealthComponent _enemyHealthComponent;
 
-    private void CalculateRotation(Transform TargetObjTransform)
-    {
-        // float angle = Mathf.Atan2(TargetObjTransform.position.y - gun.position.y,
-        //     TargetObjTransform.position.x - gun.position.x) * Mathf.Rad2Deg;
-
-        //float angle = Vector2.Angle(new Vector2(TargetObjTransform.position.x - gun.position.x, TargetObjTransform.position.y - gun.position.y), Vector3.left);
-        
-        
-        if (!shoot)
-        {
-            particles.Play();
-
-            shoot = true;
-        }
-        /*
-        else
-        {
-            shoot = false;
-            particles.Stop();
-            StopAllCoroutines();
-        }
-        */
-        
-        //Debug.Log(angle);
-    }
 
     private void OnParticleCollision(GameObject other)
     {
-        var t = other.GetComponent<ParticleSystem>();
-        if (!t.customData.enabled)
+        if (other.TryGetComponent(out DamageComponent component))
         {
-            _isSpawned = false;
-            transform.position = -Vector3.down * 10000;
-            particles.Stop();
+            _enemyHealthComponent.ReduceHealth(component.GetDamage(), false);
         }
+    }
+    
+    private void OnDeath()
+    {
+        _isSpawned = false;
+        transform.position = -Vector3.down * 10000;
+        particles.Stop();
     }
 }
