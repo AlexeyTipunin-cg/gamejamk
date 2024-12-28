@@ -19,7 +19,15 @@ public class PlayerShip : MonoBehaviour
             var w = selectedWeapons[i];
             if (w != null)
             {
-                var slot = slots.First(s => s.index == w.slotIndex);
+                var slot = slots.First( s =>
+                {
+                    if (s == null)
+                    {
+                        return false;
+                    }
+                    
+                    return s.index == w.slotIndex;
+                });
                 var weapon = Instantiate(w.prefab, slot.transform);
                 weapon.SetConfig(slot.slotConfig);
                 weapon.transform.rotation = Quaternion.Euler(0, 0, slot.slotConfig.angleInGame);
@@ -41,11 +49,6 @@ public class PlayerShip : MonoBehaviour
     
     public Weapon GetWeapon(int index)
     {
-        if (index > weapons.Count - 1)
-        {
-            return null;
-        }
-        
         return weapons.FirstOrDefault( s => s.index == index).weapon;
     }
 

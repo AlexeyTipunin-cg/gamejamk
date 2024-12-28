@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,11 @@ public class MainWindow : MonoBehaviour
     [SerializeField]private  TMP_Dropdown bodyDropdown;
     [SerializeField]private  TMP_Dropdown weapon1Dropdown;
     [SerializeField]private  TMP_Dropdown weapon2Dropdown;
+    [SerializeField]private  TMP_Dropdown weapon3Dropdown;
+    [SerializeField]private  TMP_Dropdown weapon4Dropdown;
+    [SerializeField]private  TMP_Dropdown weapon5Dropdown;
+    [SerializeField]private  TMP_Dropdown weapon6Dropdown;
+
 
 
     [SerializeField] private EngineConfig[] engineConfigs;
@@ -24,6 +30,8 @@ public class MainWindow : MonoBehaviour
     [SerializeField]private Image[] weaponsImage;
 
     [SerializeField] private WeaponSlotConfig[] _weaponSlotConfigs;
+    
+    [SerializeField] private List<TMP_Dropdown> weaponsDropdowns = new List<TMP_Dropdown>();
 
     
     private EngineConfig _currentEngine;
@@ -37,15 +45,31 @@ public class MainWindow : MonoBehaviour
         
         engineDropdown.onValueChanged.AddListener(ChangeEngine);
         bodyDropdown.onValueChanged.AddListener(ChangeBody);
+        
         weapon1Dropdown.onValueChanged.AddListener(Weapon1Dropdown);
         weapon2Dropdown.onValueChanged.AddListener(Weapon2Dropdown);
+        weapon3Dropdown.onValueChanged.AddListener(Weapon3Dropdown);
+        weapon4Dropdown.onValueChanged.AddListener(Weapon4Dropdown);
+        weapon5Dropdown.onValueChanged.AddListener(Weapon5Dropdown);
+        weapon6Dropdown.onValueChanged.AddListener(Weapon6Dropdown);
+        
+        weaponsDropdowns.Add(weapon1Dropdown);
+        weaponsDropdowns.Add(weapon2Dropdown);
+        weaponsDropdowns.Add(weapon3Dropdown);
+        weaponsDropdowns.Add(weapon4Dropdown);
+        weaponsDropdowns.Add(weapon5Dropdown);
+        weaponsDropdowns.Add(weapon6Dropdown);
+
         
         startButton.onClick.AddListener(StartGame);
 
         bodyDropdown.options.Clear();
         engineDropdown.options.Clear();
-        weapon1Dropdown.options.Clear();
-        weapon2Dropdown.options.Clear();
+        
+        foreach (TMP_Dropdown dropdown in weaponsDropdowns)
+        {
+            dropdown.options.Clear();
+        }
 
         cantStartText.text = "Перевес. Подберите компоненты по весу и мощности двигателя";
         cantStartText.gameObject.SetActive(false);
@@ -69,31 +93,22 @@ public class MainWindow : MonoBehaviour
         engineDropdown.RefreshShownValue();
         
         _currentBody = bodyConfigs[0];
-        
-        weapon1Dropdown.options.Add(new TMP_Dropdown.OptionData("Пусто"));
 
-        foreach (WeaponConfig weaponConfig in weaponConfigs)
+        foreach (TMP_Dropdown dropdown in weaponsDropdowns)
         {
-            weapon1Dropdown.options.Add(new TMP_Dropdown.OptionData(weaponConfig.name));
+            dropdown.options.Add(new TMP_Dropdown.OptionData("Пусто"));
+            foreach (var weaponConfig in weaponConfigs)
+            {
+                dropdown.options.Add(new TMP_Dropdown.OptionData(weaponConfig.name));
+            }
+            dropdown.SetValueWithoutNotify(0);
+            dropdown.RefreshShownValue();
         }
         
-        weapon1Dropdown.SetValueWithoutNotify(0);
-        weapon1Dropdown.RefreshShownValue();
-        
-        weapon2Dropdown.options.Add(new TMP_Dropdown.OptionData("Пусто"));
-
-        foreach (WeaponConfig weaponConfig in weaponConfigs)
-        {
-            weapon2Dropdown.options.Add(new TMP_Dropdown.OptionData(weaponConfig.name));
-        }
-
         foreach (Image image in weaponsImage)
         {
             image.gameObject.SetActive(false);
         }
-        
-        weapon2Dropdown.SetValueWithoutNotify(0);
-        weapon2Dropdown.RefreshShownValue();
         
         SetUpTextWeight();
 
@@ -107,6 +122,26 @@ public class MainWindow : MonoBehaviour
     private void Weapon2Dropdown(int arg0)
     {
         SetupWeapon(arg0, 1);
+    }
+    
+    private void Weapon3Dropdown(int arg0)
+    {
+        SetupWeapon(arg0, 2);
+    }
+    
+    private void Weapon4Dropdown(int arg0)
+    {
+        SetupWeapon(arg0, 3);
+    }
+    
+    private void Weapon5Dropdown(int arg0)
+    {
+        SetupWeapon(arg0, 4);
+    }
+    
+    private void Weapon6Dropdown(int arg0)
+    {
+        SetupWeapon(arg0, 5);
     }
 
     private void SetupWeapon(int arg0, int slotIndex)
@@ -135,6 +170,7 @@ public class MainWindow : MonoBehaviour
         ((RectTransform)weaponsImage[config.index].transform).localRotation = Quaternion.Euler(0, 0, config.angleInConstructWindow);
         ((RectTransform)weaponsImage[config.index].transform).localScale = new Vector3(config.scale, config.scale, 1);
         weaponsImage[config.index].gameObject.SetActive(true);
+        weaponsImage[config.index].sprite = weapon.weaponSprite;
         
         weapons[weaponIndex] = new WeaponData()
         {
