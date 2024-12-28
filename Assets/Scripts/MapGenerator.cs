@@ -12,6 +12,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] public AirGun _airGun;
     [SerializeField] public Ballon _ballon;
     [SerializeField] public EnemyPlane _enemyPlane;
+    [SerializeField] public EnemyPlaneFollower _follower;
 
     [SerializeField] public PlayerInputController _playerPrefab;
     
@@ -27,8 +28,9 @@ public class MapGenerator : MonoBehaviour
         _earthBlockWidth = _earthPrefab.sizeX;
         _pool = new  ObjectPool<Earth>(() => Instantiate(_earthPrefab, transform), ActionOnGet, ActionOnRelease);
         _firstGeneration = true;
+        SpawnFollower();
 
-        
+
         GetPrefab(_playerPrefab.transform.position.x);
     }
 
@@ -72,6 +74,11 @@ public class MapGenerator : MonoBehaviour
         {
             Instantiate(_enemyPlane, _lastSpawnPosition + Vector3.up * _earthPrefab.halfSizeY * Random.Range(1.3f, 2.7f) + Vector3.right * _earthPrefab.sizeX * (0.5f - Random.Range(0f, 1f)), Quaternion.identity);
         }
+    }
+
+    private void SpawnFollower()
+    {
+        Instantiate(_follower, -Vector3.down * 1000f, Quaternion.identity);
     }
 
     private void GetPrefab(float position)

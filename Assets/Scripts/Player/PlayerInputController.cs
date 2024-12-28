@@ -22,7 +22,7 @@ public class PlayerInputController : MonoBehaviour
     {
         upBorder = playerCamera.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
         playerHealthComponent.OnDeath += () => { isDead = true; };
-        weightMod = (SceneConnection.engineConfig.enginePower - SceneConnection.engineConfig.weight + SceneConnection.bodyConfig.weight) / SceneConnection.engineConfig.enginePower + 0.05f;
+        weightMod = (SceneConnection.engineConfig.enginePower - SceneConnection.engineConfig.weight - SceneConnection.bodyConfig.weight) / SceneConnection.engineConfig.enginePower + 0.05f;
         movementMod = new Vector2(1, playerConfig.verticalSpeed * weightMod);
     }
 

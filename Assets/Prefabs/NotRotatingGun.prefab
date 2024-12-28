@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3361416456476890909}
   - component: {fileID: 7354752407585050120}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: NotRotatingGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,9 +77,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 6422180444643119845, guid: 3c556412aa5d3b04e84cffea7bacf912, type: 3}
+  m_Sprite: {fileID: -618156798686402031, guid: 59a3201e73403a04496e625a521233da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcf1293ce384a76bf26572535db2829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponConfig: {fileID: 11400000, guid: 8531574fbb10e814b913e497d09ba64c, type: 2}
+  _weaponConfig: {fileID: 11400000, guid: 433fe7c4361218b46ab920e6be396be7, type: 2}
   attack: {fileID: 5439124888034523695}
 --- !u!1 &7351082761476076784
 GameObject:

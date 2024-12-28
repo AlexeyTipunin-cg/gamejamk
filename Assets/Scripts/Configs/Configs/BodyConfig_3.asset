@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a685162b35d4391b11f2c31842a73aa, type: 3}
-  m_Name: BodyConfig_1
+  m_Name: BodyConfig_3
   m_EditorClassIdentifier: 
-  bodyName: "\u0425\u043B\u0438\u043F\u043A\u0438\u0439 \u0444\u044E\u0437\u0438\u043B\u044F\u0436"
-  weight: 5
-  health: 50000
+  bodyName: "\u041D\u043E\u0432\u044B\u0439 \u043A\u043E\u0440\u043F\u0443\u0441"
+  weight: 10
+  health: 200

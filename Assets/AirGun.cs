@@ -29,7 +29,7 @@ public class AirGun : MonoBehaviour
 
         float angle = Vector2.Angle(new Vector2(TargetObjTransform.position.x - gun.position.x, TargetObjTransform.position.y - gun.position.y), Vector3.left);
 
-        if (angle >= 0 && angle <= 43)
+        if (angle >= 0 && angle <= 135)
         {
             gun.rotation = Quaternion.Euler(0, 0, -angle);
             

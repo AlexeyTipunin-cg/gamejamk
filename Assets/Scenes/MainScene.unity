@@ -699,6 +699,7 @@ MonoBehaviour:
   _airGun: {fileID: 6485471637700261155, guid: ca197adadc5bf544e8dbebb6e0775612, type: 3}
   _ballon: {fileID: 4850142807386189565, guid: 81e36031bf6c0534581814a43293189c, type: 3}
   _enemyPlane: {fileID: 7127648685118364312, guid: da3d5f20079e4a24781b3b5e83d69178, type: 3}
+  _follower: {fileID: 2755157893603481817, guid: 4c3a16942d4175147bc07bc795e98885, type: 3}
   _playerPrefab: {fileID: 8172722427212782857}
 --- !u!4 &1892509807
 Transform:
