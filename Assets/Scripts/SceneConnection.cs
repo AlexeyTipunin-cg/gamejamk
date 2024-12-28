@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneConnection : MonoBehaviour
 {
-    private static WeaponConfig[]  _weapons;
+    private static WeaponData[]  _weapons;
     private static EngineConfig _engineConfig;
     private static BodyConfig _bodyConfig;
 
@@ -12,7 +12,7 @@ public class SceneConnection : MonoBehaviour
 
     private static SceneConnection instance;
     
-    public static WeaponConfig[]  weapons => _weapons;
+    public static WeaponData[]  weapons => _weapons;
     public static EngineConfig engineConfigs => _engineConfig;
     
     private void Awake()
@@ -28,7 +28,7 @@ public class SceneConnection : MonoBehaviour
         }
     }
 
-    public static void LoadGameScene(EngineConfig engineConfig, BodyConfig bodyConfig, WeaponConfig[]  weapons)
+    public static void LoadGameScene(EngineConfig engineConfig, BodyConfig bodyConfig, WeaponData[]  weapons)
     {
         _engineConfig = engineConfig;
         _bodyConfig = bodyConfig;

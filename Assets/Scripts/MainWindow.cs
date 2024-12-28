@@ -29,13 +29,11 @@ public class MainWindow : MonoBehaviour
     private EngineConfig _currentEngine;
     private BodyConfig _currentBody;
 
-    private WeaponConfig[] weapons;
-
-    private int WEAPON_NUMBER = 2;
+    private WeaponData[] weapons;
     
     private void Start()
     {
-        weapons = new WeaponConfig[WEAPON_NUMBER];
+        weapons = new WeaponData[_weaponSlotConfigs.Length];
         
         engineDropdown.onValueChanged.AddListener(ChangeEngine);
         bodyDropdown.onValueChanged.AddListener(ChangeBody);
@@ -113,7 +111,6 @@ public class MainWindow : MonoBehaviour
 
     private void SetupWeapon(int arg0, int slotIndex)
     {
-        int index = _weaponSlotConfigs.FirstOrDefault(config => config.index == slotIndex).index;
         if (arg0 == 0)
         {
             var config =  _weaponSlotConfigs.First(config => config.index == slotIndex);
@@ -128,18 +125,22 @@ public class MainWindow : MonoBehaviour
         SetUpTextWeight();
     }
     
-    private WeaponConfig SetWeaponConfig(int value, int weaponIndex)
+    private void SetWeaponConfig(int value, int weaponIndex)
     {
         var weapon = weaponConfigs[value - 1];
-        weapons[weaponIndex] = weapon;
-        
+
         var config = _weaponSlotConfigs.First(config => config.index == weaponIndex);
         weaponsImage[config.index].sprite = weapon.weaponSprite;
         ((RectTransform)weaponsImage[config.index].transform).anchoredPosition = config.positionInConstructWindow;
         ((RectTransform)weaponsImage[config.index].transform).localRotation = Quaternion.Euler(0, 0, config.angleInConstructWindow);
         ((RectTransform)weaponsImage[config.index].transform).localScale = new Vector3(config.scale, config.scale, 1);
         weaponsImage[config.index].gameObject.SetActive(true);
-        return weapon;
+        
+        weapons[weaponIndex] = new WeaponData()
+        {
+            slotIndex = weaponIndex,
+            weaponConfig = weapon
+        };
     }
 
     private void ChangeEngine(int arg0)
@@ -169,7 +170,7 @@ public class MainWindow : MonoBehaviour
     private float CalculateWeight()
     {
         float weaponWeightSum = 0;
-        foreach (WeaponConfig weapon in weapons)
+        foreach (WeaponData weapon in weapons)
         {
             if (weapon != null)
             {
