@@ -17,5 +17,5 @@ MonoBehaviour:
   damage: 80
   angles: {x: -3, y: 3}
   cooldownInSeconds: 5
-  weaponSprite: {fileID: 1775187175044650136, guid: b79632058c8573d49ab408e1bc2a622a, type: 3}
+  weaponSprite: {fileID: 6422180444643119845, guid: 3c556412aa5d3b04e84cffea7bacf912, type: 3}
   weaponPrefab: {fileID: 7354752407585050120, guid: 3cd2b65ac9dc955488a1db7b93c3ba0f, type: 3}
