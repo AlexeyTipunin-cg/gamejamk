@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -15,11 +16,11 @@ public class HUDController : MonoBehaviour
         SetProgressBar(_maxHealth);
 
         _playerHealth.OnHealthChanged += SetProgressBar;
-        _playerHealth.OnDeath += ShowEndGameWindow;
         
         _scoreText.text = "0";
 
         ScoreController.OnScoreUpdate += UpdateScore;
+        ScoreController.OnScoreResult += ShowEndGameWindow;
     }
 
     private void ShowEndGameWindow()
@@ -41,5 +42,11 @@ public class HUDController : MonoBehaviour
         var scale = _playerHealthProgressBar.localScale;
         scale.x = Mathf.Max(health / _maxHealth, 0);
         _playerHealthProgressBar.localScale = scale;
+    }
+
+    private void OnDestroy()
+    {
+        ScoreController.OnScoreUpdate -= UpdateScore;
+        ScoreController.OnScoreResult -= ShowEndGameWindow;
     }
 }

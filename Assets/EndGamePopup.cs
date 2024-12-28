@@ -23,7 +23,24 @@ public class EndGamePopup : MonoBehaviour
 
     public void SetScore(int score)
     {
-        scoreText.text = "Набранные очки: " + score;
+        string text = "";
+        if (ScoreController.hasHighScore)
+        {
+            if (ScoreController.isNewRecord)
+            {
+                text = $"Вы 1-ый по очкам: {score}. Поздравляем!!!\nПредыдущий результат: {ScoreController.oldRecordScore}";
+            }
+            else
+            {
+                text = $"Лучший результат: {ScoreController.oldRecordScore}\nВаш результат: {score}";
+            }
+        }
+        else
+        {
+            text = "Ваши очки: " + score;
+        }
+
+        scoreText.text = text;
     }
     
 }
