@@ -20,9 +20,10 @@ public class Weapon : MonoBehaviour
         Vector3 diff = mouseDelta - transform.position;
         float f = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         
-        Debug.Log("WEAPON_ANGLE:-----> " + f + " limits " + config.angles.ToString());
+        Debug.Log("WEAPON_ANGLE:-----> " + f.ToString() + " limits " + (_weaponConfig.angles.x + config.angleInGame).ToString() + " " + (_weaponConfig.angles.y + config.angleInGame).ToString());
         
-        if (_weaponConfig.angles.x <= f && f <= _weaponConfig.angles.y)
+        if ( (_weaponConfig.angles.x + config.angleInGame <= f && f <= _weaponConfig.angles.y + config.angleInGame) ||
+            (_weaponConfig.angles.x + config.angleInGame <= f - 360 && f - 360 <= _weaponConfig.angles.y + config.angleInGame))
         {
             transform.rotation = Quaternion.Euler(0, 0, f);
 

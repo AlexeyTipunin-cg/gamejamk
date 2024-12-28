@@ -1230,6 +1230,10 @@ MonoBehaviour:
   bodyDropdown: {fileID: 1832606858750840969}
   weapon1Dropdown: {fileID: 6627359918838359778}
   weapon2Dropdown: {fileID: 7156042723532926830}
+  weapon3Dropdown: {fileID: 0}
+  weapon4Dropdown: {fileID: 0}
+  weapon5Dropdown: {fileID: 0}
+  weapon6Dropdown: {fileID: 0}
   engineConfigs:
   - {fileID: 11400000, guid: 9f3aab758e42b734aa11f195a8b9d7b2, type: 2}
   - {fileID: 11400000, guid: 9599f20b58933464aa2aaa97fa31a6ba, type: 2}
@@ -1238,6 +1242,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be22a2fbc37567742b2faa14cea15da6, type: 2}
   - {fileID: 11400000, guid: c67fde801b3a77f4890f3abda1a65685, type: 2}
   weaponConfigs:
+  - {fileID: 11400000, guid: 8531574fbb10e814b913e497d09ba64c, type: 2}
   - {fileID: 11400000, guid: 433fe7c4361218b46ab920e6be396be7, type: 2}
   weightText: {fileID: 3739217718059365040}
   startButton: {fileID: 3852233654112323401}
@@ -1256,6 +1261,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa15ca640699bb0488a12aabddab5977, type: 2}
   - {fileID: 11400000, guid: 60eb2c8e9c30170449dafa26ba48a46e, type: 2}
   - {fileID: 11400000, guid: f31fd8181e86a3c4cb89cc731f4f7daa, type: 2}
+  weaponsDropdowns: []
 --- !u!1 &1305932035196642480
 GameObject:
   m_ObjectHideFlags: 0
