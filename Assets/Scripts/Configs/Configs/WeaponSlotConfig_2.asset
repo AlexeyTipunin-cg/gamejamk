@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea398053f1634b389be53cbd95a8ca92, type: 3}
-  m_Name: WeaponConfig
+  m_Script: {fileID: 11500000, guid: 964d10e197cb45d099775222f339a628, type: 3}
+  m_Name: WeaponSlotConfig_2
   m_EditorClassIdentifier: 
+  index: 1
+  positionInConstructWindow: {x: 496, y: -15}
+  angleInConstructWindow: 0
+  scale: 6
+  positionInGame: {x: 0, y: 0}
+  angleInGame: 0
   angles: {x: -135, y: -45}
-  cooldownInSeconds: 0
