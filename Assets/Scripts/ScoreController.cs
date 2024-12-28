@@ -20,6 +20,11 @@ public class ScoreController : MonoBehaviour
 
     private void Start()
     {
+        
+        hasHighScore = false;
+        isNewRecord = false;
+        oldRecordScore = 0;
+        
         StartCoroutine(UpdateScore());
         _health = FindFirstObjectByType<PlayerHealthComponent>();
         _health.OnDeath += () =>
